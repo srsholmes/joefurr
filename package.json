@@ -1,0 +1,19 @@
+{
+  "name": "joe-furr",
+  "description": "Joe Furr CV",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "~4.8.3",
+    "gulp": "*",
+    "gulp-util": "2.2.14",
+    "gulp-uglify": "*",
+    "gulp-concat": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-minify-css": "*",
+    "gulp-sass": "*",
+    "gulp-browserify": "*",
+    "gulp-size": "*",
+    "swig": "~1.4.2"
+  }
+}
