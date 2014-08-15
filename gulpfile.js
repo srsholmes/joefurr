@@ -22,7 +22,7 @@ gulp.task('scripts', function() {
                 },
                 scran : {
                     path: './scripts/lib/scran.js',
-                    exports: 'scran'
+                    exports: 'Scran'
                 }
             }
         }))
