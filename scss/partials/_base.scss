@@ -130,8 +130,12 @@ body {
 }
 
 @mixin section-03 {
-	min-height: 500px;
 
+	min-height: 500px;
+	
+	.number {
+		left: -90px;
+	}
 	.details {
 		top: 95px;
 	}
@@ -149,14 +153,20 @@ body {
 		&:after {
 			right: 150px;
 		  	top: 90px;
+		  	content: '\201C';
+
 		}
 	}
-
 }
 
 
 @mixin section-04 {
 	min-height: 500px;
+
+	.number {
+		left: 150px;
+		top: 20px;
+	}
 
 	.details {
 		top: 95px;
@@ -168,9 +178,10 @@ body {
 	}
 
 	.quote {
-		margin-top: 70px;
-		width: 44%;
-		left: 330px;
+		top: -150px;
+		width: 34%;
+		left: 620px;
+		position: relative;
 
 		&:after {
 			right: 150px;
@@ -215,12 +226,26 @@ body {
 			}
 
 			&:nth-child(3) {
-				background: purple;
 				@include section-03;
 			}
 
 			&:nth-child(4) {
-				background: blue;
+				@include section-04;
+			}
+
+			&:nth-child(5) {
+				@include section-01;
+			}
+
+			&:nth-child(6) {
+				@include section-02;
+			}
+
+			&:nth-child(7) {
+				@include section-03;
+			}
+
+			&:nth-child(8) {
 				@include section-04;
 			}
 
