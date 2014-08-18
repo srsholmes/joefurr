@@ -1,27 +1,3 @@
-// var express = require('express');
-// var app = express();
-
-// app.get('/hello.txt', function(req, res){
-//   res.send('Hello World');
-// });
-
-// var server = app.listen(3000, function() {
-//     console.log('Listening on port %d', server.address().port);
-//     console.log('Hello my Lad');
-// });
-
-// var swig  = require('swig');
-
-// swig.renderFile('public/index.html', {
-    
-// });
-
-
-// var tpl = swig.compileFile('public/index.html');
-// console.log(tpl({ article: { title: 'Swig is fun!' }}));
-
-// console.log('swig go');
-
 var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
