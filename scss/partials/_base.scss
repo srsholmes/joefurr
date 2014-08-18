@@ -68,9 +68,123 @@ body {
 	overflow: hidden;
 }
 
-.content-main {
-	div {
+//Mixins for different sections of Portfolio.
 
+@mixin section-01 {
+	min-height: 500px;
+
+	.details {
+		top: 95px;
+	}
+	
+	.copy {
+		top: 70px;
+		left: 310px;
+	}
+
+	.quote {
+		margin-top: 70px;
+		width: 44%;
+		left: 330px;
+
+		&:after {
+			right: 150px;
+		  	top: 90px;
+		}
+	}
+
+}
+
+
+@mixin section-02 {
+	min-height: 500px;
+
+	.number {
+		right: 170px;
+	}
+
+	.details {
+		top: 55px;
+		right: 0;
+	}
+	
+	.copy {
+		top: 150px;
+		left: 580px;
+		right: 100px;
+	}
+
+	.quote {
+		width: 27%;
+		left: 330px;
+
+		&:after {
+			right: 80px;
+		  	top: 40px;
+		  	content: '\201C';
+		}
+
+		
+	}
+
+}
+
+@mixin section-03 {
+	min-height: 500px;
+
+	.details {
+		top: 95px;
+	}
+	
+	.copy {
+		top: 70px;
+		left: 310px;
+	}
+
+	.quote {
+		margin-top: 70px;
+		width: 44%;
+		left: 330px;
+
+		&:after {
+			right: 150px;
+		  	top: 90px;
+		}
+	}
+
+}
+
+
+@mixin section-04 {
+	min-height: 500px;
+
+	.details {
+		top: 95px;
+	}
+	
+	.copy {
+		top: 70px;
+		left: 310px;
+	}
+
+	.quote {
+		margin-top: 70px;
+		width: 44%;
+		left: 330px;
+
+		&:after {
+			right: 150px;
+		  	top: 90px;
+		}
+	}
+
+}
+
+
+
+.content-main {
+
+	div {
 		&.cv-section {
 			width: 100%;
 			height: auto;
@@ -79,13 +193,37 @@ body {
 			margin-bottom: 30px;
 			position: relative;
 
+			p {
+				font-weight: lighter;
+				font-size: 0.8em;
+			}
+
 			&:nth-child(odd) {
 
 			}
 
 			&:nth-child(even) {
 
-			}	
+			}
+
+			&:nth-child(1) {
+				@include section-01;
+			}
+
+			&:nth-child(2) {
+				@include section-02;
+			}
+
+			&:nth-child(3) {
+				background: purple;
+				@include section-03;
+			}
+
+			&:nth-child(4) {
+				background: blue;
+				@include section-04;
+			}
+
 		}
 
 		&.number {
@@ -93,7 +231,7 @@ body {
   			color: $yellow;
   			position: absolute;
   			font-size: 210px;
-  			z-index: 1;
+  			// z-index: 1;
 		}
 
 		&.details {
@@ -102,7 +240,7 @@ body {
 			font-family: "futura-pt-condensed",sans-serif;
 			color: black;
 			width: 33%;
-			top: 95px;
+			// top: 95px;
 			display: inline-block;
 
 		}
@@ -124,31 +262,67 @@ body {
 		}
 
 		&.copy {
-			width: 33%;
+			width: 36%;
 			height: auto;
-			top: 70px;
-			left: 310px;
+			// top: 70px;
+			// left: 310px;
 			padding-left: 20px;
 			padding-right: 20px;
 			/* float: right; */
 			position: relative;
-			background: rgba(235, 235, 235, 0.65);
 			display: inline-block;
 		}
 
 		&.quote {
-			top: 70px;
+			// margin-top: 70px;
 			position: relative;
-			width: 66%;
-			left: 310px;
-			background: green;
+			// width: 44%;
+			// left: 330px;
+			border-top: 1px solid black;
+			font-size: 1.2em;
+			text-transform: uppercase;
+			
+			&:after {
+					content: '\201D';
+  					font-family: "lust",sans-serif;
+		  			color: $yellow;
+		  			position: absolute;
+		  			font-size: 210px;
+		  			z-index: 1;
+		  			// right: 150px;
+		  			// top: 90px;
+			}
+
 
 			.quote-copy {
 				position: relative;
+				border-bottom: 1px solid black;
+				text-transform: uppercase;
+				right: 0;
+				color: black;
+				font-size: 1.3em;
+				z-index: 3;
+
+				
+				p {
+					font-family: "futura-pt-condensed",sans-serif;
+					letter-spacing: 5px;
+				}
 			}
 
 			.reference {
+				color: black;
+				font-size: 1.1em;
+				position: relative;
+				z-index: 2;
 
+				p {
+					font-family: "futura-pt-condensed",sans-serif;
+					font-style: italic;
+					text-align: right;
+					text-transform: none;
+
+				}				
 			}
 		}
 	}

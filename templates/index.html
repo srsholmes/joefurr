@@ -50,7 +50,6 @@
             </ul>
 
             <div class="content-main">
-                <p>Here is the content of the cv</p>
                     {% for item in section %}
                         <div class=" {{item.slug}} cv-section">
                             <div class="number">{{item.number}}</div>
@@ -73,7 +72,7 @@
                                    {{item.quote|safe}}
                                 </div>
                                 <div class="reference">
-                                    {{item.reference|safe}}
+                                    <p>{{item.reference|safe}}</p>
                                 </div>
                             </div>                        
                         </div>   
