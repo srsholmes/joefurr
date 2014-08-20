@@ -18,37 +18,43 @@
 
 
 {% block content %}
-    {% for item in section %}
-        <div class="{{item.slug}} portfolio-section">
-            <div class="details">
-                <div class="client-name">
-                    {{item.clientName}}
+    <div class="portfolio-wrapper">
+        {% for item in section %}
+            <div class="{{item.slug}} portfolio-section">
+                <div class="details">
+                    <div class="client-name">
+                        {{item.clientName}}
+                    </div>
+                    <div class="subtitle">
+                        {{item.projectTitle}}
+                        <br/>
+                        {{item.projectDesc}}
+                    </div>
                 </div>
-                <div class="subtitle">
-                    {{item.projectTitle}}
-                    <br/>
-                    {{item.projectDesc}}
+                <div class="copy">
+                   {{item.copy|safe}}
                 </div>
-            </div>
-            <div class="copy">
-               {{item.copy|safe}}
-            </div>
 
-            <div class="logo">
-                <img src="/img/{{item.slug}}-logo-bg.png" alt="{{item.clientName}} Logo">
-            </div>
-            
-            <div class="slide-container">
-                <ul class="slides">
-                    {% for slide in item.slides %}
-                        <li class="slide">
-                            <img src="/img/{{slide.slide}}-slide.png" alt="">
-                        </li>
-                    {% endfor %}
-                </ul>               
-            </div>
-                                  
-        </div>   
-    {% endfor %}
+                <div class="logo">
+                    <img src="/img/{{item.slug}}-logo-bg.png" alt="{{item.clientName}} Logo">
+                </div>
+                
+                <div class="slide-container">
+                    <ul class="slides">
+                        {% for slide in item.slides %}
+                            <li class="slide">
+                                <img src="/img/{{slide.slide}}-slide.png" alt="">
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <div class="arrow-nav">
+                        <a href="#" class="prev"></a>
+                        <a href="#" class="next"></a>
+                    </div>               
+                </div>                                      
+            </div>   
+        {% endfor %}
+    </div>
 {% endblock %}
 

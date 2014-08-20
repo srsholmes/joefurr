@@ -31,6 +31,53 @@
                     "slide" : "merc-02"
                 }
             ]
+        },
+        {
+            "number" : "03",
+            "clientName": "Mercedes",
+            "slug" : "mercedes",
+            "projectTitle" : "founder & lead designer",
+            "projectDesc" : "January 2014-present",
+            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
+            "slides" : [
+                {
+                    "slide" : "merc-01"
+                },
+                {
+                    "slide" : "merc-02"
+                }
+            ]
+        },
+        {
+            "number" : "04",
+            "clientName": "Mercedes",
+            "slug" : "mercedes",
+            "projectTitle" : "founder & lead designer",
+            "projectDesc" : "January 2014-present",
+            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
+            "slides" : [
+                {
+                    "slide" : "merc-01"
+                },
+                {
+                    "slide" : "merc-02"
+                }
+            ]
+        }
+    ],    
+
+    "nav" : [
+        {
+            "name" : "Portfolio",
+            "url" : "#"
+        },
+        {
+            "name" : "Experience",
+            "url" : "#"
+        },
+        {
+            "name" : "Contact",
+            "url" : "#"
         }
     ]
 }
