@@ -1,32 +1,20 @@
 var ƒ = require('hdom');
 var $s = require('scran');
+var scrollSection = require('./modules/scrollSection')(ƒ);
+var portfolioSlide = require('./modules/portfolioSlide')(ƒ);
+
+
 ƒ(function() {
    
 	console.log('hello my joe');
 
-	// $s('.cv-section')
-	// 	.each(function(i, len){
-	// 		var $this = $s(this);
-	// 		$this
-	// 			.force(true)
-	// 			.transform()
-	// 				.start(function(){
-	// 					return 124 + (i * $this.height());
-	// 				})
-	// 				.end(function(){
-	// 					return 124 + ((i + 1) * $this.height());
-	// 				})
-	// 				.opacity({
-	// 					opacity : [0,1]
-	// 				})
-	// 				.translateX({
-	// 					tx : [
-	// 						function() {
-	// 							return (i % 2 === 0) ? $s.windowWidth() * 2 : -($s.windowWidth() * 2);
-	// 						},
-	// 						0
-	// 					]
-	// 				}, $s.easing.easeInOutCirc)
-	// 	});
-    
+	if(ƒ('body').hasClass('index')){
+       scrollSection.init();
+    }
+
+   	if(ƒ('body').hasClass('portfolio')){
+       // scrollSection.init();
+       portfolioSlide.init();
+    }
+
 });

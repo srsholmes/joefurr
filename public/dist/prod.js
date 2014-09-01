@@ -1,37 +1,25 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var ƒ = require('hdom');
 var $s = require('scran');
+var scrollSection = require('./modules/scrollSection')(ƒ);
+var portfolioSlide = require('./modules/portfolioSlide')(ƒ);
+
+
 ƒ(function() {
    
 	console.log('hello my joe');
 
-	// $s('.cv-section')
-	// 	.each(function(i, len){
-	// 		var $this = $s(this);
-	// 		$this
-	// 			.force(true)
-	// 			.transform()
-	// 				.start(function(){
-	// 					return 124 + (i * $this.height());
-	// 				})
-	// 				.end(function(){
-	// 					return 124 + ((i + 1) * $this.height());
-	// 				})
-	// 				.opacity({
-	// 					opacity : [0,1]
-	// 				})
-	// 				.translateX({
-	// 					tx : [
-	// 						function() {
-	// 							return (i % 2 === 0) ? $s.windowWidth() * 2 : -($s.windowWidth() * 2);
-	// 						},
-	// 						0
-	// 					]
-	// 				}, $s.easing.easeInOutCirc)
-	// 	});
-    
+	if(ƒ('body').hasClass('index')){
+       scrollSection.init();
+    }
+
+   	if(ƒ('body').hasClass('portfolio')){
+       // scrollSection.init();
+       portfolioSlide.init();
+    }
+
 });
-},{"hdom":"SZ033r","scran":"jIez3g"}],"hdom":[function(require,module,exports){
+},{"./modules/portfolioSlide":6,"./modules/scrollSection":7,"hdom":"SZ033r","scran":"jIez3g"}],"hdom":[function(require,module,exports){
 module.exports=require('SZ033r');
 },{}],"SZ033r":[function(require,module,exports){
 (function (global){
@@ -1917,4 +1905,78 @@ module.exports=require('jIez3g');
 }).call(global, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],6:[function(require,module,exports){
+
+module.exports = function() {
+
+	function init() {
+		console.log('Portoflio Slide');
+
+		ƒ('.slides').each(function(el, i) {
+			var ƒthis = ƒ(this);
+			// console.log(el);
+			var firstSlide = ƒ(el).find('li:first-child').clone();
+			var lastSlide = ƒ(el).find('li:last-child');
+			// console.log(lastSlide);
+			// ƒthis.append(firstSlide);
+
+			var newList = ƒ(this).find('li:first-child');
+			console.log(newList);
+			newList.prepend(lastSlide);
+
+			//Bug in hDom where if you append and then prepend you need to re select otherwise is replaces the appended/prepended item
+			// ƒthis.prepend(firstSlide);
+
+
+			// var lastSlide = ƒ(el).find(':last-child');
+		});
+
+    }
+
+    return {
+        init: init
+    };
+
+}
+
+},{}],7:[function(require,module,exports){
+
+module.exports = function() {
+
+	function init() {
+		console.log('scrollSsection');
+
+		$s('.cv-section')
+		.each(function(i, len){
+			var $this = $s(this);
+			$this
+				.force(true)
+				.transform()
+					.start(function(){
+						return 124 + (i * $this.height());
+					})
+					.end(function(){
+						return 124 + ((i + 1) * $this.height());
+					})
+					.opacity({
+						opacity : [0,1]
+					})
+					.translateX({
+						tx : [
+							function() {
+								return (i % 2 === 0) ? $s.windowWidth() * 2 : -($s.windowWidth() * 2);
+							},
+							0
+						]
+					}, $s.easing.easeInOutCirc)
+		});
+
+    }
+
+    return {
+        init: init
+    };
+
+}
+
 },{}]},{},[1])

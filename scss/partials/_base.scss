@@ -27,6 +27,10 @@ ul {
 	}
 }
 
+// body {
+// 	display: none;
+// }
+
 body {
 	margin: auto;
 	position: relative;
@@ -388,6 +392,13 @@ body {
 				z-index: 2;
 				position: relative;
 				top: 70px;
+
+				ul {
+					li {
+						position: absolute;
+						left: 0;
+					}
+				}
 			}
 
 			&:nth-child(odd) {
