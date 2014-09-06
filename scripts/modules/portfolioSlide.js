@@ -6,21 +6,23 @@ module.exports = function() {
 
 		ƒ('.slides').each(function(el, i) {
 			var ƒthis = ƒ(this);
-			// console.log(el);
 			var firstSlide = ƒ(el).find('li:first-child').clone();
-			var lastSlide = ƒ(el).find('li:last-child');
-			// console.log(lastSlide);
+			var lastSlidePosition = ƒ(el).find('li').length;
+			//last slide position is length -1 as array notation starts from 0 and length starts from 1.
+			//last child selector doesnt seem to work.
+			var lastSlide = ƒ(el).find('li')[lastSlidePosition - 1];
+			console.log('first child' , firstSlide);
+			console.log('last child ' , lastSlide);
+
+			//Bug in hDOM with append/prepend. It doesn't work quite as intended if used liek this. 
 			// ƒthis.append(firstSlide);
-
-			var newList = ƒ(this).find('li:first-child');
-			console.log(newList);
-			newList.prepend(lastSlide);
-
-			//Bug in hDom where if you append and then prepend you need to re select otherwise is replaces the appended/prepended item
-			// ƒthis.prepend(firstSlide);
+			// ƒthis.prepend(lastSlide);
 
 
-			// var lastSlide = ƒ(el).find(':last-child');
+
+
+
+
 		});
 
     }
