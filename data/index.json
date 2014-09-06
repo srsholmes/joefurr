@@ -85,15 +85,15 @@
     "nav" : [
         {
             "name" : "Portfolio",
-            "url" : "#"
+            "url" : "/portfolio"
         },
         {
             "name" : "Experience",
-            "url" : "#"
+            "url" : "/cv"
         },
         {
             "name" : "Contact",
-            "url" : "#"
+            "url" : "/contact"
         }
     ]
 }

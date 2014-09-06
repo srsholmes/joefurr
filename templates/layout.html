@@ -21,19 +21,21 @@
                 </ul>
             </nav>
 
-            <div class="top-right">
+             <div class="top-right">
                 <ul class="futura">
-                    <li>Illustrator</li>
-                    <li>Founder</li>
-                    <li>Designer</li>
+                    {% block top_right %}
+                        <li>Illustrator</li>
+                        <li>Founder</li>
+                        <li>Designer</li>
+                    {% endblock %}
                 </ul>
             </div>
-
             <header class="content-top">
                 {% block headline %}
                     <div class="headline">
                         <h1>Joe Furr</h1>
-                        <p>Freelance senior digital designer & Illustrator.<br/> Founder of Deck.<br/>
+                        <hr>
+                        <p>Freelance senior digital designer &amp; Illustrator.<br/> Founder of Deck.<br/>
                             6 + years in creative &amp; tech industry</p>
                     </div>
                 {% endblock %}                
@@ -44,13 +46,6 @@
             </header>
 
             <h1>{{ pagename|title }}</h1>
-            <ul>
-            {# {% for author in authors %}
-              <li{% if loop.first %} class="first"{% endif %}>
-                {{ author }}
-              </li>
-            {% endfor %} #}
-            </ul>
 
             <div class="content-main">
                 {% block content %}
@@ -87,7 +82,7 @@
                     <div class="bottom">
                         <p>Got a question? Want to work together?<br/>
                         Fancy a chat? Quick pint? drop me a line...</p>
-                        <a href="#" class="email">joe@whatthefurr.com</a>
+                        <a href="mailto:joe@whatthefurr.com"  class="email">joe@whatthefurr.com</a>
                         <a href="#" class="icon-arrow-up go-to-top"></a>
                     </div>
                 </footer>

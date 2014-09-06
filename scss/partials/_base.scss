@@ -438,6 +438,34 @@ body {
 .headline {
 	position: absolute;
 	color: black;
+
+	h1 {
+		font-size: 4em;
+		margin-bottom: 0;
+	}
+
+	hr {
+		color: black;
+		width: 100px;
+		display: block;
+		position: relative;
+		left: 0;
+		margin: 0;
+		padding: 0;
+		border-color: black;
+	}
+
+	p {
+		font-size: 1.4em;
+		max-width: 260px;
+	}
+
+	a {
+		color: black;
+		text-decoration: underline;
+	}
+
+
 }
 
 .image-j {
@@ -447,6 +475,12 @@ body {
 	margin: auto;
 	width: 374px;
 	height: 424px;
+
+	img {
+		margin: auto;
+		display: block;
+		width: auto;
+	}
 }
 
 // Header
@@ -460,7 +494,8 @@ nav {
 	height: 30px;
 	background: black;
 	text-transform: uppercase;
-	padding: 6px;
+	padding: 4px;
+	padding-left: 13px;	
 
 	ul {
 		margin: 0;
@@ -473,9 +508,11 @@ nav {
 				color: $nav_gray;
 				text-decoration: none;
 				font-family: "futura-pt-condensed",sans-serif;
+				font-size: 1em;
+				transition: color 0.3s ease-in;
 
 				
-				&.active {
+				&:hover, &.active {
 					color: white;
 				}
 			}
@@ -485,13 +522,23 @@ nav {
 
 .top-right {
 	position: absolute;
-	background: red;
 	color: black;
 	height: 100px;
-	width: 185px;
+	width: auto;
 	transform: rotate(90deg);
 	right: 0;
 	top: 110px;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	font-family: "futura-pt-condensed",sans-serif;
+	letter-spacing: 5px;
+	display: block;
+
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
 }
 
 //Footer
