@@ -6,4 +6,182 @@ body, #wrapper {
 	width: 100%;
 	max-width: 100%;
 	min-width: 100%;
+	margin: auto;
+	margin-bottom: auto;
+}
+
+.desktop-hidden {
+	display: block;
+}
+
+body {
+	#wrapper {
+		top: 0;
+		margin: auto;
+	}
+}
+
+.content-bottom, .content-main, .content-top {
+	padding: 10px;
+	font-size: 0.6em;
+
+}
+
+.headline {
+	top: inherit;
+}
+
+.content-top {
+	position: relative;
+	margin-top: 216px;
+	height: 300px;
+}
+
+//Mixins for mobile sections
+
+@mixin section-mobile {
+	min-height: auto;
+
+	.details, .copy, .number, .quote {
+		top: inherit;
+		left: inherit;
+		right: inherit;
+	}
+	
+	.copy {
+		top: inherit;
+		left: inherit;
+	}
+
+	.quote {
+		margin-top: inherit;
+		width: 100%;
+
+		&:after {
+			right: inherit;
+		  	top: inherit;
+		}
+	}
+}
+
+.content-main {
+	div {
+		&.cv-section {
+			&:nth-child(1) {
+				@include section-mobile;
+			}
+
+			&:nth-child(2) {
+				@include section-mobile;
+			}
+
+			&:nth-child(3) {
+				@include section-mobile;
+			}
+
+			&:nth-child(4) {
+				@include section-mobile;
+			}
+
+			&:nth-child(5) {
+				@include section-mobile;
+			}
+
+			&:nth-child(6) {
+				@include section-mobile;
+			}
+
+			&:nth-child(7) {
+				@include section-mobile;
+			}
+
+			&:nth-child(8) {
+				@include section-mobile;
+			}
+		}
+
+		&.copy {
+			width: 100%;
+		}
+	}
+}
+
+.image-j {
+	position: absolute;
+	left: 0;
+	right: -240px;
+	margin: auto;
+	width: 80%;
+	height: auto;
+
+	img {
+		width: 100%;
+	}
+}
+
+.content-bottom {
+	a {
+		font-size: 2.2em;
+		border-bottom: 1px solid black;
+		margin: 10px 0;
+	}
+}
+
+//Footer 
+
+footer {
+	font-size: 0.6em;
+	padding: 0;
+
+	.top {
+		padding: 10px;
+		.left, .right {
+			width: 100%;
+			margin: 10px 0;
+			font-size: 1.8em;
+		}
+
+		.left {
+			ul {
+				width: 100%;
+
+				li {
+					max-width: 49%;
+					min-width: 49%;
+				}
+			}
+		}
+	}
+
+	.bottom {
+		p {
+			width: 100%;
+			padding: 10px;
+		}
+
+		a {
+			font-size: 2.7em;
+			padding: 10px;
+
+			&.go-to-top {
+				padding: 0;
+				width: 100%;
+				padding: 20px;
+				text-align: center;
+				position: relative;
+				border: none;
+				background: red;
+				top: inherit;
+				color: white;
+		
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	h3 {
+		font-size: 34px;
+	}
 }
