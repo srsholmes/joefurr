@@ -2,14 +2,22 @@ var ƒ = require('hdom');
 var $s = require('scran');
 var scrollSection = require('./modules/scrollSection')(ƒ);
 var portfolioSlide = require('./modules/portfolioSlide')(ƒ);
+var utils = require('./modules/utils')(ƒ);
 
 
 ƒ(function() {
    
-	console.log('hello my joe');
+
+	utils.init();
 
 	if(ƒ('body').hasClass('index')){
-       scrollSection.init();
+		//Check if mobile
+		if(utils.mobilecheck()){
+
+		}else {
+			scrollSection.init();
+		}
+
     }
 
    	if(ƒ('body').hasClass('portfolio')){
