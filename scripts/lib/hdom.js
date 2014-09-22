@@ -256,7 +256,13 @@
             this.each(function() {
                 var _self = this;
                 var tmp = [];
-                var query = !last ? _self.querySelectorAll(sel) : [_self.querySelector(sel).parentNode.lastChild];
+                var query;
+                if (!last) {
+                    query = _self.querySelectorAll(sel);
+                } else {
+                    var s = _self.querySelector(sel).parentNode;
+                    query = [s.children[s.children.length - 1]];
+                }
                 _utils.each(query, function(val, prop) {
                     tmp[prop] = val;
                 });

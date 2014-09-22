@@ -23,6 +23,14 @@ gulp.task('scripts', function() {
                 scran : {
                     path: './scripts/lib/scran.js',
                     exports: 'Scran'
+                },
+                interpol: {
+                    path: './scripts/lib/interpol.js',
+                    exports: 'Interpol'
+                },
+                matrix2d: {
+                    path: './scripts/lib/matrix2d.js',
+                    exports: 'Matrix2D'
                 }
             }
         }))

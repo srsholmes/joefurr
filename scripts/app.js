@@ -1,7 +1,7 @@
 var ƒ = require('hdom');
 var $s = require('scran');
+var Slider = require('./modules/slider')(ƒ);
 var scrollSection = require('./modules/scrollSection')(ƒ);
-var portfolioSlide = require('./modules/portfolioSlide')(ƒ);
 var utils = require('./modules/utils')(ƒ);
 
 
@@ -22,7 +22,8 @@ var utils = require('./modules/utils')(ƒ);
 
    	if(ƒ('body').hasClass('portfolio')){
        // scrollSection.init();
-       portfolioSlide.init();
+       	Slider.init();
+
     }
 
 });
