@@ -16,7 +16,7 @@
             <nav>
                 <ul>
                     {% for item in nav %}
-                        <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+                        <li><a class="nav-{{ item.name }}" href="{{ item.url }}">{{ item.name }}</a></li>
                     {% endfor %}
                 </ul>
             </nav>
@@ -55,7 +55,7 @@
             {% block footer %}
 
                 <div class="content-bottom">
-                    <a href="#" class="portfolio">View my portfolio</a>
+                    <a href="/portfolio" class="portfolio">View my portfolio</a>
                     <a href="#" class="deck">View my startup, Deck</a>
                 </div>
 

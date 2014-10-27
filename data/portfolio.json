@@ -19,7 +19,7 @@
         {
             "number" : "02",
             "clientName": "Mercedes",
-            "slug" : "mercedes",
+            "slug" : "vitamin-water",
             "projectTitle" : "founder & lead designer",
             "projectDesc" : "January 2014-present",
             "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
@@ -44,7 +44,7 @@
         {
             "number" : "03",
             "clientName": "Mercedes",
-            "slug" : "mercedes",
+            "slug" : "peugeot",
             "projectTitle" : "founder & lead designer",
             "projectDesc" : "January 2014-present",
             "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
@@ -60,7 +60,7 @@
         {
             "number" : "04",
             "clientName": "Mercedes",
-            "slug" : "mercedes",
+            "slug" : "coop",
             "projectTitle" : "founder & lead designer",
             "projectDesc" : "January 2014-present",
             "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
@@ -78,15 +78,15 @@
     "nav" : [
         {
             "name" : "Portfolio",
-            "url" : "#"
+            "url" : "/portfolio"
         },
         {
             "name" : "Experience",
-            "url" : "#"
+            "url" : "/cv/joe_furr_cv.pdf"
         },
         {
             "name" : "Contact",
-            "url" : "#"
+            "url" : "/contact"
         }
     ]
 }

@@ -81,7 +81,6 @@
             "reference": "Alice Bentink, Founder, Entrepreneur First"
         }
     ],    
-
     "nav" : [
         {
             "name" : "Portfolio",
@@ -89,7 +88,7 @@
         },
         {
             "name" : "Experience",
-            "url" : "/cv"
+            "url" : "/cv/joe_furr_cv.pdf"
         },
         {
             "name" : "Contact",
