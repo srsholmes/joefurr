@@ -45,22 +45,24 @@
                     <img src="/img/{{item.slug}}-logo-bg.png" alt="{{item.clientName}} Logo">
                 </div>
 
-                {% spaceless %}                
-                    <div slider class="slide-container">
+                {% spaceless %}
+                <div slider class="slide-control-container">            
+                    <div class="slide-container">
                         <ul class="slides slider">
                             {% for slide in item.slides %}
                                 <li class="slide">
                                     <img src="/img/{{slide.slide}}-slide.png" alt="">
                                 </li>
                             {% endfor %}
-                        </ul>  
-                        
-                        <div class="arrow-nav">
-                            <a href="#" class="prev"></a>
-                            <a href="#" class="next"></a>
-                        </div>                
+                        </ul>                
                     </div>   
-                {% endspaceless %}                              
+                {% endspaceless %}     
+                    <div class="arrow-nav">
+                        <a class="prev nav-left"></a>
+                        <span class="counter"><span class="current">1</span> / <span class="total">12</span></span>
+                        <a class="next nav-right"></a>
+                    </div> 
+                </div>                           
             </div>   
         {% endfor %}
     </div>
