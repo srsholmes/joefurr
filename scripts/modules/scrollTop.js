@@ -1,7 +1,6 @@
 var Interpol = require('interpol');
 
 module.exports = function() {
-
     function init() {
         console.log('scroll top');
         ƒ('.go-to-top').bind('click', function(event) {
@@ -16,7 +15,6 @@ module.exports = function() {
                 })                
                 .start();
         });
-
     }
 
     return {

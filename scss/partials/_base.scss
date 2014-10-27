@@ -384,7 +384,7 @@ body {
 			}
 
 			.copy {
-				top: 30px;
+				top: 10px;
 				z-index: 2;
 			}
 
@@ -401,12 +401,43 @@ body {
 				position: relative;
 				top: 70px;
 
+				width: 100%;
+				overflow: hidden;
+
 				ul {
-					li {
+					width: 100%;
+					margin: auto;
+					white-space: nowrap;
+					margin: 0;
+					display: block;
+					list-style-type: disc;
+					padding: 0;
+				}
+
+				li {
+					display: inline-block;
+					width: 100%;
+					height: 690px;
+					overflow: hidden;
+					text-align: center;
+					margin: 0;
+					padding: 0;
+					border: none;
+					position: relative;
+
+					img {
 						position: absolute;
+						top: 0;
 						left: 0;
 					}
 				}
+
+				// ul {
+				// 	li {
+				// 		position: absolute;
+				// 		left: 0;
+				// 	}
+				// }
 			}
 
 			&:nth-child(odd) {
@@ -418,6 +449,18 @@ body {
 			}			
 		}
 	}
+}
+
+.arrow-nav {
+	display: block;
+	background: $yellow;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 100px;
+	height: 100px;
+	z-index: 4;
+	right: 0;
 }
 
 .content-bottom {
@@ -472,7 +515,6 @@ body {
 		color: black;
 		text-decoration: underline;
 	}
-
 
 }
 

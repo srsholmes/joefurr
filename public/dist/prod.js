@@ -115,6 +115,7 @@ module.exports=require('SZ033r');
                     dataType : 'text',
                     data : '',
                     cache : true,
+                    crossDomain : false,
                     success : function(r) {},
                     error : function(r) {},
                     method : 'GET',
@@ -124,34 +125,54 @@ module.exports=require('SZ033r');
                 if (!args.url) return;
                 if (args.method === 'GET' && !args.cache) args.data += '_=' + new Date().getTime();
 
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    var rs = xhr.readyState;
-                    if (rs < 4) return;
-                    if (rs === 4) {
-                        if (xhr.status !== 200 && xhr.status !== 0) {
-                            args.error.call(this, xhr.responseText);
-                            return;
-                        }
-                        switch (args.dataType)
-                        {
-                            case 'text':
-                            case 'html':
-                            case 'script':
-                                args.success.call(this, xhr.responseText);
-                            break;
-                            case 'json':
-                                args.success.call(this, JSON.parse(xhr.responseText));
-                            break;
-                            case 'xml':
-                                args.success.call(this, xhr.responseXML);
-                            break;
-                        }
+                var constructor, isXDomainReq = false;
+                if (args.crossDomain && 'XDomainRequest' in w) {
+                    constructor = XDomainRequest;
+                    isXDomainReq = true;
+                } else {
+                    constructor = XMLHttpRequest;
+                }
+
+                function success(req) {
+                    switch (args.dataType)
+                    {
+                        case 'text':
+                        case 'html':
+                        case 'script':
+                            args.success.call(this, req.responseText);
+                        break;
+                        case 'json':
+                            args.success.call(this, JSON.parse(req.responseText));
+                        break;
+                        case 'xml':
+                            args.success.call(this, req.responseXML);
+                        break;
                     }
-                };
+                }
+
+                var xhr = new constructor();
+                if (isXDomainReq) {
+                    xhr.onload = function() {
+                        success(xhr);
+                    }
+                } else {
+                    xhr.onreadystatechange = function() {
+                        var rs = xhr.readyState;
+                        if (rs < 4) return;
+                        if (rs === 4) {
+                            if (xhr.status !== 200 && xhr.status !== 0) {
+                                args.error.call(this, xhr.responseText);
+                                return;
+                            }
+                            success(xhr);
+                        }
+                    };
+                }
+                
                 xhr.onerror = function() {
                     args.error.call(this, xhr.responseText);
                 };
+
                 xhr.open(args.method, args.url, args.async);
                 if (args.method === 'POST') xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.send(args.data);
@@ -280,6 +301,17 @@ module.exports=require('SZ033r');
                 fn.apply(this[i], [this[i], i]);
             }
             return this;
+        }
+    }));
+
+    Object.defineProperty(ElementCollection.prototype, 'get', _utils.extend(_defaults, {
+        value: function(index) {
+            if (index !== -1 && !this.hasOwnProperty(index)) {
+                throw 'Supplied index out of bounds';
+            } else {
+                var i = index === -1 ? this.length - 1 : index;
+                return new ElementCollection([this[i]]);
+            }
         }
     }));
 
@@ -2633,7 +2665,6 @@ module.exports = function() {
 var Interpol = require('interpol');
 
 module.exports = function() {
-
     function init() {
         console.log('scroll top');
         ƒ('.go-to-top').bind('click', function(event) {
@@ -2648,7 +2679,6 @@ module.exports = function() {
                 })                
                 .start();
         });
-
     }
 
     return {
@@ -2661,13 +2691,12 @@ module.exports = function() {
 var Interpol = require('interpol'),
     Matrix2D = require('matrix2d');
 
-module.exports = function(ƒ) {
+module.exports = function(ƒ,w,d) {
 
 
-    function init() {
-        console.log('slider sinit');
+    function init(){
 
-        ƒ('[slider]').each(function(el, i) {
+      ƒ('[slider]').each(function(el, i) {
             /*
              * Hoist variables.
              */
@@ -2676,33 +2705,55 @@ module.exports = function(ƒ) {
                 ƒNubbins = ƒWrapper.find('.nubbins'),
                 ƒNubbinsUl = ƒNubbins.find('ul'),
                 ƒNubbinsLi = ƒNubbinsUl.find('li'),
-                ƒfirstClone = ƒUl.find('li:first-child').clone(),
-                ƒlastClone = ƒUl.find('li:last-child').clone(),
+                ƒLis = ƒUl.find('li'),
+                ƒfirstClone = ƒLis.get(0).clone(true),
+                // ƒfirstClone2 = ƒLis.get(1).clone(true),
+                // ƒfirstClone3 = ƒLis.get(2).clone(true),
+                // ƒfirstClone4 = ƒLis.get(3).clone(true),
+                ƒlastClone = ƒLis.get(-1).clone(true),
                 liLength = ƒUl.find('li').length,
                 position = ƒWrapper.hasClass('catchup') ? 2 : 1,
                 canTransition = true,
                 timeoutVal = ƒWrapper.attr('autoplay'),
                 timeout;
 
-            var next = ƒWrapper[0].parentNode.querySelector('[next]');
-            var prev = ƒWrapper[0].parentNode.querySelector('[prev]');
+            var next = ƒWrapper.find('.nav-left');
+            var prev = ƒWrapper.find('.nav-right');
 
             ƒfirstClone.addClass('first-clone');
             ƒlastClone.addClass('last-clone');
+
             /*
              * Function to determine an elements width
              */
+
             function elementWidth(el) {
                 var rect = el.getBoundingClientRect();
                 return rect.right - rect.left;
             }
 
+            function _getFirstSupported(arr) {
+               var div = document.createElement('div');
+               var ven = null;
+               arr.forEach(function(vendor) {
+                    if (typeof div.style[vendor] !== 'undefined') ven = vendor;
+               });
+
+               return ven;
+            }
+
+            var CSS_TRANSFORM = (function() {
+               var arr = ' ms Moz Webkit O'.split(' ').map(function(prefix) {
+                   return prefix === '' ? 'transform' : prefix + 'Transform';
+               });
+               return _getFirstSupported(arr);
+            })();
+
             /*
              * Render function
              */
             function render() {
-                ƒUl[0].style.marginLeft = -(position * elementWidth(ƒWrapper[0])) + 'px';
-                if (timeoutVal) timeout = setTimeout(move('next'), parseInt(timeoutVal, 10));
+                ƒUl[0].style[CSS_TRANSFORM] = "translateX(" + -(position * elementWidth(ƒWrapper[0])) + "px)";
             }
 
             function move(direction) {
@@ -2714,7 +2765,7 @@ module.exports = function(ƒ) {
                     if (!canTransition) return;
                     canTransition = false;
                     var to,
-                        currentValue = parseInt(ƒUl[0].style.marginLeft, 10);
+                        currentValue = parseInt(/\((.+)\)/g.exec(ƒUl[0].style[CSS_TRANSFORM])[1], 10); // ? NaN
 
                     if (isNaN(dir)) {
                         /*
@@ -2747,6 +2798,7 @@ module.exports = function(ƒ) {
                     //     }
                     // }
 
+
                     /*
                      *  Reset the position properly for infinite looping
                      */
@@ -2755,10 +2807,10 @@ module.exports = function(ƒ) {
                     /*
                      * Reset and select the corrent nubbin
                      */
-                    for (var j = 0; j < ƒNubbinsLi.length; j++) {
-                        var dNub = ƒNubbinsLi[j];
-                        dNub.className = actualPos === (j + 1) ? 'active' : '';
-                    }
+                    // for (var j = 0; j < ƒNubbinsLi.length; j++) {
+                    //     var dNub = ƒNubbinsLi[j];
+                    //     dNub.className = actualPos === (j + 1) ? 'active' : '';
+                    // }
 
                     /*
                      * Interpol leverages requestAnimationFrame to create smooth
@@ -2771,7 +2823,8 @@ module.exports = function(ƒ) {
                         .to(to)
                         .ease(Interpol.easing.easeInOutCirc)
                         .step(function(val) {
-                            ƒUl[0].style.marginLeft = val + 'px';
+                            // ƒUl[0].style.marginLeft = val + 'px';
+                            ƒUl[0].style[CSS_TRANSFORM] = "translateX(" + val + "px)";
                         })
                         .complete(function() {
                             //Needs some logic to detect when it is the end of the slide
@@ -2786,18 +2839,16 @@ module.exports = function(ƒ) {
                 };
             }
 
-            for (var j = 1; j < liLength; j++) {
-                ƒNubbinsUl[0].appendChild(ƒNubbinsLi[0].cloneNode(true));
-            }
-            ƒNubbinsLi = ƒNubbinsUl.find('li');
-            ƒNubbinsLi[position - 1].className = 'active';
-            for (var k = 0; k < ƒNubbinsLi.length; k++) {
-                var dNub = ƒNubbinsLi[k];
-                dNub.addEventListener('tap', move(k + 1));
-                dNub.addEventListener('click', move(k + 1));
-            }
-
-
+            // for (var j = 1; j < liLength; j++) {
+            //     ƒNubbinsUl[0].appendChild(ƒNubbinsLi[0].cloneNode(true));
+            // }
+            // ƒNubbinsLi = ƒNubbinsUl.find('li');
+            // ƒNubbinsLi[position - 1].className = 'active';
+            // for (var k = 0; k < ƒNubbinsLi.length; k++) {
+            //     var dNub = ƒNubbinsLi[k];
+            //     dNub.addEventListener('tap', move(k + 1));
+            //     dNub.addEventListener('click', move(k + 1));
+            // }
 
             /*
              * Add listeners for our custom events.
@@ -2810,15 +2861,15 @@ module.exports = function(ƒ) {
             //Buttons for left and right arrows on second slider.
 
             if (next && prev) {
-                ƒ(next).bind('click', move('next'));
-                ƒ(prev).bind('click', move('prev'));
+                next.bind('click', move('prev'));
+                prev.bind('click', move('next'));
             }
 
-            ƒUl.prepend(ƒlastClone);
-            ƒUl.append(ƒfirstClone);
-
-            // ƒ('.arrow-nav-selfie a.icon-arrow-right').bind('click', move('next'));
-            // ƒ('.arrow-nav-selfie a.icon-arrow-left').bind('click', move('right'));
+            ƒLis[0].parentNode.insertBefore(ƒlastClone[0], ƒLis[0]);
+            ƒUl[0].appendChild(ƒfirstClone[0]);
+            // ƒUl[0].appendChild(ƒfirstClone2[0]);
+            // ƒUl[0].appendChild(ƒfirstClone3[0]);
+            // ƒUl[0].appendChild(ƒfirstClone4[0]);
 
             render();
 
@@ -2832,8 +2883,7 @@ module.exports = function(ƒ) {
 
     }
 
-
-    return {
+     return {
         init: init
     };
 

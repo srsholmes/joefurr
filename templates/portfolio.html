@@ -6,7 +6,7 @@
     <div class="headline">
         <h1>Joe Furr</h1>
         <hr>
-        <p>London based digital designer. Founder of <br/><a href="">Deck</a> &amp; <a href="">Whatthefurr.</a></p>
+        <p>London based digital designer. Founder <br/>of <a href="">Deck</a> &amp; <a href="">Whatthefurr.</a></p>
     </div>
 {% endblock %}   
 
@@ -44,21 +44,23 @@
                 <div class="logo">
                     <img src="/img/{{item.slug}}-logo-bg.png" alt="{{item.clientName}} Logo">
                 </div>
-                
-                <div class="slide-container">
-                    <ul class="slides">
-                        {% for slide in item.slides %}
-                            <li class="slide">
-                                <img src="/img/{{slide.slide}}-slide.png" alt="">
-                            </li>
-                        {% endfor %}
-                    </ul>
 
-                    <div class="arrow-nav">
-                        <a href="#" class="prev"></a>
-                        <a href="#" class="next"></a>
-                    </div>               
-                </div>                                      
+                {% spaceless %}                
+                    <div slider class="slide-container">
+                        <ul class="slides slider">
+                            {% for slide in item.slides %}
+                                <li class="slide">
+                                    <img src="/img/{{slide.slide}}-slide.png" alt="">
+                                </li>
+                            {% endfor %}
+                        </ul>  
+                        
+                        <div class="arrow-nav">
+                            <a href="#" class="prev"></a>
+                            <a href="#" class="next"></a>
+                        </div>                
+                    </div>   
+                {% endspaceless %}                              
             </div>   
         {% endfor %}
     </div>

@@ -78,6 +78,7 @@
                     dataType : 'text',
                     data : '',
                     cache : true,
+                    crossDomain : false,
                     success : function(r) {},
                     error : function(r) {},
                     method : 'GET',
@@ -87,34 +88,54 @@
                 if (!args.url) return;
                 if (args.method === 'GET' && !args.cache) args.data += '_=' + new Date().getTime();
 
-                var xhr = new XMLHttpRequest();
-                xhr.onreadystatechange = function() {
-                    var rs = xhr.readyState;
-                    if (rs < 4) return;
-                    if (rs === 4) {
-                        if (xhr.status !== 200 && xhr.status !== 0) {
-                            args.error.call(this, xhr.responseText);
-                            return;
-                        }
-                        switch (args.dataType)
-                        {
-                            case 'text':
-                            case 'html':
-                            case 'script':
-                                args.success.call(this, xhr.responseText);
-                            break;
-                            case 'json':
-                                args.success.call(this, JSON.parse(xhr.responseText));
-                            break;
-                            case 'xml':
-                                args.success.call(this, xhr.responseXML);
-                            break;
-                        }
+                var constructor, isXDomainReq = false;
+                if (args.crossDomain && 'XDomainRequest' in w) {
+                    constructor = XDomainRequest;
+                    isXDomainReq = true;
+                } else {
+                    constructor = XMLHttpRequest;
+                }
+
+                function success(req) {
+                    switch (args.dataType)
+                    {
+                        case 'text':
+                        case 'html':
+                        case 'script':
+                            args.success.call(this, req.responseText);
+                        break;
+                        case 'json':
+                            args.success.call(this, JSON.parse(req.responseText));
+                        break;
+                        case 'xml':
+                            args.success.call(this, req.responseXML);
+                        break;
                     }
-                };
+                }
+
+                var xhr = new constructor();
+                if (isXDomainReq) {
+                    xhr.onload = function() {
+                        success(xhr);
+                    }
+                } else {
+                    xhr.onreadystatechange = function() {
+                        var rs = xhr.readyState;
+                        if (rs < 4) return;
+                        if (rs === 4) {
+                            if (xhr.status !== 200 && xhr.status !== 0) {
+                                args.error.call(this, xhr.responseText);
+                                return;
+                            }
+                            success(xhr);
+                        }
+                    };
+                }
+                
                 xhr.onerror = function() {
                     args.error.call(this, xhr.responseText);
                 };
+
                 xhr.open(args.method, args.url, args.async);
                 if (args.method === 'POST') xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
                 xhr.send(args.data);
@@ -243,6 +264,17 @@
                 fn.apply(this[i], [this[i], i]);
             }
             return this;
+        }
+    }));
+
+    Object.defineProperty(ElementCollection.prototype, 'get', _utils.extend(_defaults, {
+        value: function(index) {
+            if (index !== -1 && !this.hasOwnProperty(index)) {
+                throw 'Supplied index out of bounds';
+            } else {
+                var i = index === -1 ? this.length - 1 : index;
+                return new ElementCollection([this[i]]);
+            }
         }
     }));
 
