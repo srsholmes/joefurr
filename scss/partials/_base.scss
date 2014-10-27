@@ -317,6 +317,10 @@ body {
 			/* float: right; */
 			position: relative;
 			display: inline-block;
+
+			p {
+				font-size: 13px;
+			}
 		}
 
 		&.quote {
