@@ -76,6 +76,10 @@ body {
 	overflow: hidden;
 }
 
+.go-to-top {
+	cursor: pointer;
+}
+
 //Mixins for different sections of cv.
 
 @mixin section-01 {

@@ -4,12 +4,14 @@ var $s = require('scran');
 var Slider = require('./modules/slider')(ƒ);
 var scrollSection = require('./modules/scrollSection')(ƒ);
 var utils = require('./modules/utils')(ƒ);
+var scrollTop = require('./modules/scrollTop')(ƒ);
 
 
 ƒ(function() {
    
 
 	utils.init();
+	scrollTop.init();
 
 	if(ƒ('body').hasClass('index')){
 		//Check if mobile
@@ -28,7 +30,7 @@ var utils = require('./modules/utils')(ƒ);
     }
 
 });
-},{"./modules/scrollSection":10,"./modules/slider":11,"./modules/utils":12,"hdom":"SZ033r","scran":"jIez3g"}],"hdom":[function(require,module,exports){
+},{"./modules/scrollSection":10,"./modules/scrollTop":11,"./modules/slider":12,"./modules/utils":13,"hdom":"SZ033r","scran":"jIez3g"}],"hdom":[function(require,module,exports){
 module.exports=require('SZ033r');
 },{}],"SZ033r":[function(require,module,exports){
 (function (global){
@@ -2628,6 +2630,34 @@ module.exports = function() {
 }
 
 },{}],11:[function(require,module,exports){
+var Interpol = require('interpol');
+
+module.exports = function() {
+
+    function init() {
+        console.log('scroll top');
+        ƒ('.go-to-top').bind('click', function(event) {
+            var top = (window.pageYOffset || document.scrollTop)  - (document.clientTop || 0);
+            console.log(top);
+            Interpol.tween()
+                .from(top)
+                .to(0)
+                .ease(Interpol.easing.easeInOutCirc)
+                .step(function(val) {
+                    window.scrollTo(0, val)
+                })                
+                .start();
+        });
+
+    }
+
+    return {
+        init: init
+    };
+
+}
+
+},{"interpol":"mg76ti"}],12:[function(require,module,exports){
 var Interpol = require('interpol'),
     Matrix2D = require('matrix2d');
 
@@ -2808,7 +2838,7 @@ module.exports = function(ƒ) {
     };
 
 };
-},{"interpol":"mg76ti","matrix2d":"rsMZbX"}],12:[function(require,module,exports){
+},{"interpol":"mg76ti","matrix2d":"rsMZbX"}],13:[function(require,module,exports){
 module.exports = function() {
 
 	function init() {

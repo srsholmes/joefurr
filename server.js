@@ -27,10 +27,5 @@ app.get('/portfolio', function (req, res) {
   	res.render('portfolio', require(__dirname + '/data/portfolio.json'));
 });
 
-// swig.renderFile('public/index.html', {
-//     pagename: 'awesome people',
-//     authors: ['Paul', 'Jim', 'Jane']
-// });
-
 app.listen(1337);
 console.log('Application Started on http://localhost:1337/');
