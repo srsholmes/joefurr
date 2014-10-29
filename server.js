@@ -27,6 +27,8 @@ app.get('/portfolio', function (req, res) {
   	res.render('portfolio', require(__dirname + '/data/portfolio.json'));
 });
 
+//To set up environment.... NODE_ENV=production node app.js
+
 console.log(app.settings.env);
 
 if (app.get('env') === 'development') {
