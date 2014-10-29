@@ -3,7 +3,7 @@
   "description": "Joe Furr CV",
   "version": "0.0.1",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "express": "~4.8.3",
     "gulp": "*",
     "gulp-util": "2.2.14",
@@ -16,5 +16,9 @@
     "gulp-size": "*",
     "swig": "~1.4.2",
     "http-route-proxy": "^0.1.1"
+  }, 
+  "dependencies": {
+    "express": "~4.8.3",
+    "swig": "~1.4.2"
   }
 }
