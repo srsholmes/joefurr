@@ -24,7 +24,6 @@ body {
 .content-bottom, .content-main, .content-top {
 	padding: 10px;
 	font-size: 0.6em;
-
 }
 
 .headline {
@@ -46,20 +45,34 @@ body {
 		top: inherit;
 		left: inherit;
 		right: inherit;
+		font-size: 1.8em;
+		position: relative;
 	}
 	
 	.copy {
-		top: inherit;
+		top: -160px;
 		left: inherit;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.number {
+		font-size: 200px;
+	}
+
+	.details {
+		width: 50%;
+		top: -190px;
 	}
 
 	.quote {
 		margin-top: inherit;
 		width: 100%;
+		top: -180px;
 
 		&:after {
-			right: inherit;
-		  	top: inherit;
+			right: 0;
+		  	top: 50%;
 		}
 	}
 }
@@ -67,37 +80,28 @@ body {
 .content-main {
 	div {
 		&.cv-section {
-			&:nth-child(1) {
+			margin-bottom: -170px;
+
+			&:nth-child(even) {
 				@include section-mobile;
+				.number {
+					right: -70px;
+				}
+
+				.details {
+					width: 70%;
+					top: -200px;
+					right: -30%;
+					left: inherit;
+				}
 			}
 
-			&:nth-child(2) {
+			&:nth-child(odd) {
 				@include section-mobile;
-			}
-
-			&:nth-child(3) {
-				@include section-mobile;
-			}
-
-			&:nth-child(4) {
-				@include section-mobile;
-			}
-
-			&:nth-child(5) {
-				@include section-mobile;
-			}
-
-			&:nth-child(6) {
-				@include section-mobile;
-			}
-
-			&:nth-child(7) {
-				@include section-mobile;
-			}
-
-			&:nth-child(8) {
-				@include section-mobile;
-			}
+				.number {
+					left: -30px;
+				}
+			}			
 		}
 
 		&.copy {

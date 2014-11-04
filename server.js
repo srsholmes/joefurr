@@ -4,6 +4,8 @@ var express = require('express'),
   	swig = require('swig'),
   	people;
 
+var fs = require('fs');
+
 // This is where all the magic happens!
 app.engine('html', swig.renderFile);
 
@@ -19,15 +21,19 @@ swig.setDefaults({ cache: false });
 // NOTE: You should always cache templates in a production environment.
 // Don't leave both of these to `false` in production!
 
+
+
 app.get('/', function (req, res) {
-  	res.render('index', require(__dirname + '/data/index.json'));
+  	res.render('index', JSON.parse(fs.readFileSync(__dirname + '/data/index.json')));
+
 });
 
 app.get('/portfolio', function (req, res) {
-  	res.render('portfolio', require(__dirname + '/data/portfolio.json'));
+  	res.render('portfolio',  JSON.parse(fs.readFileSync(__dirname + '/data/portfolio.json')));
+
 });
 
-//To set up environment.... NODE_ENV=production node app.js
+//To set up environment.... NODE_ENV=production node server.js
 
 console.log(app.settings.env);
 
