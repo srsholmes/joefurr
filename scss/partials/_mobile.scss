@@ -28,6 +28,10 @@ body {
 
 .headline {
 	top: inherit;
+
+	p {
+		max-width: 200px;
+	}
 }
 
 .content-top {
@@ -54,6 +58,8 @@ body {
 		left: inherit;
 		padding-left: 0;
 		padding-right: 0;
+		width: 73%;
+		line-height: 20px;
 	}
 
 	.number {
@@ -67,8 +73,13 @@ body {
 
 	.quote {
 		margin-top: inherit;
-		width: 100%;
-		top: -180px;
+		width: 90%;
+		top: -160px;
+		margin: auto;
+
+		.quote-copy {
+			font-size: 1.2em;
+		}
 
 		&:after {
 			right: 0;
@@ -84,9 +95,14 @@ body {
 
 			&:nth-child(even) {
 				@include section-mobile;
+
 				.number {
-					right: -70px;
+					right: -20px;
 				}
+
+				.copy {
+					left: 27%;
+				}				
 
 				.details {
 					width: 70%;
@@ -97,11 +113,46 @@ body {
 			}
 
 			&:nth-child(odd) {
-				@include section-mobile;
-				.number {
-					left: -30px;
-				}
+				@include section-mobile;				
 			}			
+		}
+
+		&.portfolio-section {
+			@include section-mobile;
+			min-height: inherit;
+			margin-bottom: 100px;
+
+
+			.arrow-nav {
+				display: none;
+			}
+
+
+			&:nth-child(odd), &:nth-child(even) {
+
+				.details, .copy {
+					top: inherit;
+					left: inherit;
+					right: inherit;
+				}
+
+				.logo {
+					left: 110px;
+				}
+
+				.slide-container {
+					height: auto;
+				}
+
+			}
+
+			&:nth-child(even) {
+				.logo {
+					left: 110px;
+				}
+			}
+
+			
 		}
 
 		&.copy {
@@ -110,7 +161,7 @@ body {
 	}
 }
 
-.image-j {
+.image-j, .image-f {
 	position: absolute;
 	left: 0;
 	right: -240px;
@@ -121,6 +172,15 @@ body {
 	img {
 		width: 100%;
 	}
+}
+
+.image-f {
+	position: absolute;
+	left: 0;
+	right: -220px;
+	margin: auto;
+	width: 50%;
+	height: auto;
 }
 
 .content-bottom {
@@ -142,7 +202,7 @@ footer {
 		.left, .right {
 			width: 100%;
 			margin: 10px 0;
-			font-size: 1.8em;
+			font-size: 1.5em;
 		}
 
 		.left {
@@ -174,9 +234,11 @@ footer {
 				text-align: center;
 				position: relative;
 				border: none;
-				background: red;
-				top: inherit;
+				background: #373737;
+				top: 30px;
+				margin-bottom: 30px;
 				color: white;
+				padding-top: 27px;
 		
 				&:before {
 					display: none;
