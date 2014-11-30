@@ -6,19 +6,41 @@
             "slug" : "deck",
             "title" : "founder & lead designer",
             "date" : "January 2014-present",
-            "copy": "<p>Founded Deck in January 2014 with a technical co-founder to create a cloud based document creation platform. Our goal is to make it easy for anyone to create beautiful documents in minutes. Responsible for all design output, including the UX, the product design, demo video, animation, website and social collateral.</p>",
+            "copy": "<p>Founded Deck in 2014, a cloud based document creation platform. Deck makes it easy for anyone to create beautifully designed documents. I was responsible for the design output, including the branding, product design, demo video and website.</p>",
+            "bullets" : [
+                {
+                    "point" : "Pitched to 150 investors for EFs demo Day at Microsoft HQ in London."
+                },
+                {
+                    "point" : "Raised £25K angel investment to fund the development of the product."
+                }
+            ],
             "quote": "<p>Joe is an awesome designer. He quickly AND efficiently produces simple AND effective designs. He's also a great founder who is determined AND customer focused.</p>",
             "reference": "Alice Bentink, Founder, Entrepreneur First"
         },
         {
             "number" : "02",
-            "name": "YCN STUDIO, FUTURE PLATFORMS, EF, DOUGH...",
-            "slug" : "ycn",
+            "name": "Freelance",
+            "slug" : "freelance",
             "title" : "FREELANCE Senior Digital Designer",
             "date" : "DECEMBER 2014 - PRESENT",
-            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consecteur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
+            "copy": "<p>Worked with a variety of agencies and startups including Future Platforms, Holler, YCN, Handy and Freemavens.<p/><p>Responsible for:</p>",
+            "bullets" : [
+                {
+                    "point" : "New brand identity for a billion £ Venture Capital firm, IP Group. Entirely responsible for the execution, from initial concepts through to final logomarks."
+                },
+                {
+                    "point" : "Design overhaul of YCN’s website. Including profile pages, portfolios and a new search and booking experience."
+                },
+                {
+                    "point" : "Art directed video shoots for Salesforce and The Hoxton Hotel in London, Chicago and San Francisco."
+                },
+                {
+                    "point" : "Lead designer on Dorling Kindersley’s collaboration with Microsoft. A tablet app designed for children between 4 - 10. Intended to be education and entertaining, and the first tablet app to integrate with a 3D printer."
+                }
+            ],
             "quote": "<p>Joe Is a VERY Talented digital designer. We threw him into a very wide variety of briefs and he always came through with strong ideas AND solutions to REAL problems.</p>",
-            "reference": "Alice Bentink, Founder, Entrepreneur First"
+            "reference": "Andy Mitchell, Head of Art, BD"
         },
         {           
             "number" : "03",
@@ -26,9 +48,9 @@
             "slug" : "holler",
             "title" : "Senior Digital Designer",
             "date" : "April 2013- December 2013",
-            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
+            "copy": "<p>A key member of the design team. Responsible for projects across a number of key accounts including Mercedes-Benz, Red Bull and The Co-operative. Projects ranged from iOS apps, responsive websites, social campaigns and brand identity.</p>",
             "quote": "<p>Joe has supreme design skills. He constantly strives to try new things and push concepts beyond what is expected. He is a true creative at heart.</p>",
-            "reference": "Alice Bentink, Founder, Entrepreneur First"
+            "reference": "Nick Bygraves, Art Director, Holler"
         },
         {           
             "number" : "04",
@@ -36,49 +58,9 @@
             "slug" : "bd-network",
             "title" : "Digital Designer",
             "date" : "April 2013 - Decmeber 2013",
-            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
+            "copy": "<p>A senior member of the digital design team. Worked alongside a copywriters to produce concepts and designs for successful pitches, including Chelsea FC, Nintendo and Coca-Cola. Design Projects include responsive websites, motion graphics, and iOS tablet apps for clients such as Peugeot, Molson Coors and Virgin Media.</p>",
             "quote": "<p>Joe is one of the most passionate and talented designers you could possible wish to meet. He's hard working, enthusiastic and has the tools to produce brilliant work time and time again...</p>",
-            "reference": "Alice Bentink, Founder, Entrepreneur First"
-        },
-        {
-            "number" : "05",
-            "name": "deck",
-            "slug" : "deck",
-            "title" : "founder & lead designer",
-            "date" : "January 2014-present",
-            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
-            "quote": "<p>Joe is an awesome designer. He quickly AND efficiently produces simple AND effective designs. He's also a great founder who is determined AND customer focused.</p>",
-            "reference": "Alice Bentink, Founder, Entrepreneur First"
-        },
-        {
-            "number" : "06",
-            "name": "YCN STUDIO, FUTURE PLATFORMS, EF, DOUGH...",
-            "slug" : "ycn",
-            "title" : "FREELANCE Senior Digital Designer",
-            "date" : "DECEMBER 2014 - PRESENT",
-            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consecteur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
-            "quote": "<p>Joe Is a VERY Talented digital designer. We threw him into a very wide variety of briefs and he always came through with strong ideas AND solutions to REAL problems.</p>",
-            "reference": "Alice Bentink, Founder, Entrepreneur First"
-        },
-        {           
-            "number" : "07",
-            "name": "Holler London",
-            "slug" : "holler",
-            "title" : "Senior Digital Designer",
-            "date" : "April 2013- December 2013",
-            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
-            "quote": "<p>Joe has supreme design skills. He constantly strives to try new things and push concepts beyond what is expected. He is a true creative at heart.</p>",
-            "reference": "Alice Bentink, Founder, Entrepreneur First"
-        },
-        {           
-            "number" : "08",
-            "name": "BD Network",
-            "slug" : "bd-network",
-            "title" : "Digital Designer",
-            "date" : "April 2013 - Decmeber 2013",
-            "copy": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quaerat soluta ex iste asperiores molestias sit accusamus dolor molestiae enim, fugiat, porro non, sunt dolorem quod commodi. Quasi, itaque, ratione.</p>",
-            "quote": "<p>Joe is one of the most passionate and talented designers you could possible wish to meet. He's hard working, enthusiastic and has the tools to produce brilliant work time and time again...</p>",
-            "reference": "Alice Bentink, Founder, Entrepreneur First"
+            "reference": "Dan Claxton, Creative Director, BD Network"
         }
     ],    
     "nav" : [

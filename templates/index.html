@@ -25,6 +25,17 @@
             </div>
             <div class="copy">
                {{item.copy|safe}}
+            {% spaceless %}
+                {% if item.bullets %}
+                    <ul class="bullet-points">
+                        {% for bullet in item.bullets %}
+                            <li class="bullet">
+                                <p>{{ bullet.point }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endspaceless %} 
             </div>
 
             <div class="quote">
