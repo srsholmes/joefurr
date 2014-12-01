@@ -38,7 +38,7 @@ app.get('/portfolio', function (req, res) {
 console.log(app.settings.env);
 
 if (app.get('env') === 'development') {
-	app.listen(80);
+	app.listen(1337);
 	console.log('Application Started on http://localhost:1337/');
 }
 
