@@ -33,7 +33,7 @@ app.get('/portfolio', function (req, res) {
 
 });
 
-//To set up environment on server (using forever).... NODE_ENV=production forever  server.js
+//To set up environment on server (using forever).... NODE_ENV=production forever start server.js
 //
 console.log(app.settings.env);
 
