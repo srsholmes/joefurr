@@ -6,7 +6,8 @@ tw{% extends 'layout.html' %}
     <div class="headline">
         <h1>Joe Furr</h1>
         <hr>
-        <p>London based digital designer. Founder <br/>of <a target="_blank" href="http://usedeck.com/">Deck</a> &amp; <a href="http://whatthefurr.com/" target="_blank">Whatthefurr.</a></p>
+
+        <p>London based digital designer &amp; Illustrator. Expertise in web, mobile and brand identity. For more information click <a href="/">here</a>.</p>        
     </div>
 {% endblock %}   
 
@@ -49,6 +50,11 @@ tw{% extends 'layout.html' %}
                 <div slider class="slide-control-container">            
                     <div class="slide-container">
                         <ul class="slides slider">
+                            {% for videos in item.videos %}
+                                <li class="slide">
+                                    <iframe src="//www.youtube.com/embed/{{videos.video}}" frameborder="0" allowfullscreen></iframe>
+                                </li>
+                            {% endfor %}
                             {% for slide in item.slides %}
                                 <li class="slide">
                                     <img src="/img/{{slide.slide}}-slide.png" alt="">
