@@ -4,8 +4,8 @@
             "number" : "01",
             "clientName": "Absolut",
             "slug" : "absolut",
-            "projectTitle" : "Add your drop",
-            "projectDesc" : "January 2014-present",
+            "projectTitle" : "Originality",
+            "projectDesc" : "Interactive and responsive website design",
             "copy": "<p>We created an interactive video experience powered by Likes, Shares and Tweets. Every user is presented with a clear glass bottle, and with each social interaction a drop of blue ink is added to the glass. Responsible for the design output and art direction of the video.</p>",
             "slides" : [
                 {
@@ -29,7 +29,7 @@
             "clientName": "Mercedes-Benz",
             "slug" : "mercedes-benz",
             "projectTitle" : "AMG UK",
-            "projectDesc" : "January 2014-present",
+            "projectDesc" : "Responsive Website design",
             "copy": "<p>A fully responsive website for Mercedes-Benz AMG UK. Using a flexible grid system and dynamic navigation we created an experience that reflected the style of MB’s elite collection of cars.</p>",
             "slides" : [
                 {
@@ -53,8 +53,8 @@
             "number" : "03",
             "clientName": "Vitamin Water",
             "slug" : "vitamin-water",
-            "projectTitle" : "founder & lead designer",
-            "projectDesc" : "January 2014-present",
+            "projectTitle" : "Shine Bright",
+            "projectDesc" : "Parallax scrolling responsive website",
             "copy": "<p>Responsible for the design of Vitamin Water’s Shine Bright website. We developed a horizontally scrolling navigation that has now been used globally by the brand.</p>",
             "slides" : [
                 {
@@ -69,8 +69,8 @@
             "number" : "04",
             "clientName": "Co-op",
             "slug" : "coop",
-            "projectTitle" : "founder & lead designer",
-            "projectDesc" : "January 2014-present",
+            "projectTitle" : "Membership app",
+            "projectDesc" : "Native iOS application",
             "copy": "<p>Design of an iOs app for co-operatives 2.5million members. Allows users to vote on important issues and be notified of local and national co-operative news. Each user interaction is rewarded with membership points, available to be used in store.</p>",
             "slides" : [
                 {
@@ -85,8 +85,8 @@
             "number" : "05",
             "clientName": "Peugeot",
             "slug" : "peugeot",
-            "projectTitle" : "founder & lead designer",
-            "projectDesc" : "January 2014-present",
+            "projectTitle" : "Showroom sales app",
+            "projectDesc" : "Native iOS tablet application",
             "copy": "<p>iOS tablet application design for Peugeot and Citroen. The apps allowed salesman to show features of the cars, book test drives, record information and make sales through one simple interface.</p>",
             "slides" : [
                 {
@@ -101,8 +101,8 @@
             "number" : "06",
             "clientName": "Deck",
             "slug" : "deck",
-            "projectTitle" : "founder & lead designer",
-            "projectDesc" : "January 2014-present",
+            "projectTitle" : "Founder and lead designer",
+            "projectDesc" : "Identity, Website, Product design",
             "copy": "<p>Responsible for the entire design output and user experience, from on boarding through to creating documents and sharing. Created the product design, website, demo video and brand identity.</p>",
             "slides" : [
                 {
@@ -117,8 +117,8 @@
             "number" : "07",
             "clientName": "Snipped",
             "slug" : "snipped",
-            "projectTitle" : "founder & lead designer",
-            "projectDesc" : "January 2014-present",
+            "projectTitle" : "Founder and lead designer",
+            "projectDesc" : "Identity, Website, Product design",
             "copy": "<p>Product design and UX for an early stage startup. Responsible for the design of the web and mobile applications, allowing users to create and personalise profiles, make bookings and take payments.</p>",
             "slides" : [
                 {
@@ -133,8 +133,8 @@
             "number" : "08",
             "clientName": "EF",
             "slug" : "ef",
-            "projectTitle" : "founder & lead designer",
-            "projectDesc" : "January 2014-present",
+            "projectTitle" : "2014 brand refresh",
+            "projectDesc" : "Identity design",
             "copy": "<p>Brand identity for one of Europe’s leading accelerator programs.</p>",
             "slides" : [
                 {

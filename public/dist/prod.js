@@ -5,6 +5,7 @@ var Slider = require('./modules/slider')(ƒ);
 var scrollSection = require('./modules/scrollSection')(ƒ);
 var utils = require('./modules/utils')(ƒ);
 var scrollTop = require('./modules/scrollTop')(ƒ);
+var youtube = require('./modules/youtube')(ƒ);
 
 
 ƒ(function() {
@@ -26,11 +27,11 @@ var scrollTop = require('./modules/scrollTop')(ƒ);
    	if(ƒ('body').hasClass('portfolio')){
        // scrollSection.init();
        	Slider.init();
-
+       	youtube.init();
     }
 
 });
-},{"./modules/scrollSection":10,"./modules/scrollTop":11,"./modules/slider":12,"./modules/utils":13,"hdom":"SZ033r","scran":"jIez3g"}],"hdom":[function(require,module,exports){
+},{"./modules/scrollSection":10,"./modules/scrollTop":11,"./modules/slider":12,"./modules/utils":13,"./modules/youtube":14,"hdom":"SZ033r","scran":"jIez3g"}],"hdom":[function(require,module,exports){
 module.exports=require('SZ033r');
 },{}],"SZ033r":[function(require,module,exports){
 (function (global){
@@ -2868,4 +2869,18 @@ module.exports = function() {
     };
 
 }
+},{}],14:[function(require,module,exports){
+
+module.exports = function() {
+
+	function init() {
+		console.log('youtube init');
+    }
+
+    return {
+        init: init
+    };
+
+}
+
 },{}]},{},[1])

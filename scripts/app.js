@@ -4,6 +4,7 @@ var Slider = require('./modules/slider')(ƒ);
 var scrollSection = require('./modules/scrollSection')(ƒ);
 var utils = require('./modules/utils')(ƒ);
 var scrollTop = require('./modules/scrollTop')(ƒ);
+var youtube = require('./modules/youtube')(ƒ);
 
 
 ƒ(function() {
@@ -25,7 +26,7 @@ var scrollTop = require('./modules/scrollTop')(ƒ);
    	if(ƒ('body').hasClass('portfolio')){
        // scrollSection.init();
        	Slider.init();
-
+       	youtube.init();
     }
 
 });
