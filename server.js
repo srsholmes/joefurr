@@ -1,3 +1,8 @@
+//SSH Server Settings
+// ssh root@178.62.102.137
+// pwcd
+
+
 var express = require('express'),
 	app = express(),
 	server = require('http').createServer(app),
