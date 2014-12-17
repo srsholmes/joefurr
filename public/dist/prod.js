@@ -14,15 +14,15 @@ var youtube = require('./modules/youtube')(ƒ);
 	utils.init();
 	scrollTop.init();
 
-	if(ƒ('body').hasClass('index')){
-		//Check if mobile
-		if(utils.mobilecheck()){
+	// if(ƒ('body').hasClass('index')){
+	// 	//Check if mobile
+	// 	if(utils.mobilecheck()){
 
-		}else {
-			scrollSection.init();
-		}
+	// 	}else {
+	// 		scrollSection.init();
+	// 	}
 
-    }
+ //    }
 
    	if(ƒ('body').hasClass('portfolio')){
        // scrollSection.init();
